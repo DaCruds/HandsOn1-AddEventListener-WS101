@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript addEventListener() Hands-On</title>
+
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(binary.jpg);
+    background-size:cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+h1 {
+    color: #ffffff;
+}
+
+button {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px 30px;
+ color: #861313;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+button::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 25px 10px;
+ background-color: #212121;
+ z-index: -1;
+ box-shadow: 4px 8px 19px -3px rgba(146, 5, 5, 0.274);
+ transition: all 100ms
+}
+
+button:hover {
+ color: #e8e8e8;
+}
+
+button:hover::before {
+ width: 100%;
+}
+
+
+</style>
+</head>
+<body>
+
+    <h1>JavaScript addEventListener() Hands-On</h1>
+
+    
+    <button id="button1">Button 1</button>
+    <br>
+    <button id="button2">Button 2</button>
+    <br>
+    <button id="button3">Button 3</button>
+
+    <script>
+        function handleClickButton1() {
+            alert("Button 1 was clicked!");
+        }
+
+        
+        function handleClickButton2() {
+            alert("Button 2 was clicked!");
+        }
+
+        
+        function handleClickButton3() {
+            alert("Button 3 was clicked!");
+        }
+
+       
+        document.getElementById("button1").addEventListener("click", handleClickButton1);
+        document.getElementById("button2").addEventListener("click", handleClickButton2);
+        document.getElementById("button3").addEventListener("click", handleClickButton3);
+    </script>
+
+</body>
+</html>
